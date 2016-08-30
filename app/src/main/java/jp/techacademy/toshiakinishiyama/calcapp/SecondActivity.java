@@ -15,16 +15,14 @@ public class SecondActivity extends AppCompatActivity {
         TextView textView = (TextView) findViewById(R.id.textView);
 
         Intent intent = getIntent();
-        //float value1 = intent.getFloatExtra("VALUE1", 0);     なぜか 0.0 としか受け取れない・・・
-        //float value2 = intent.getFloatExtra("VALUE2", 0);     なぜか 0.0 としか受け取れない・・・
 
-        int value1 = 0;
-        int value2 = 0;
+        float value1 = 0;
+        float value2 = 0;
 
         // 第 1 引数受取
         try
         {
-            value1 = intent.getIntExtra("VALUE1", 0);
+            value1 = intent.getFloatExtra("VALUE1", 0);
         }
         catch (NumberFormatException e)
         {
@@ -35,7 +33,7 @@ public class SecondActivity extends AppCompatActivity {
         // 第 2 引数受取
         try
         {
-            value2 = intent.getIntExtra("VALUE2", 0);
+            value2 = intent.getFloatExtra("VALUE2", 0);
         }
         catch (NumberFormatException e)
         {
@@ -55,7 +53,7 @@ public class SecondActivity extends AppCompatActivity {
                 textView.setText(String.valueOf(value1 - value2));
                 break;
             case "*":
-                textView.setText(String.valueOf((float)value1 * (float)value2));
+                textView.setText(String.valueOf(value1 * value2));
                 break;
             case "/":
                 if(value2 == 0)
@@ -64,7 +62,7 @@ public class SecondActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    textView.setText(String.valueOf((float) value1 / (float) value2));
+                    textView.setText(String.valueOf(value1 / value2));
                 }
                 break;
             default:

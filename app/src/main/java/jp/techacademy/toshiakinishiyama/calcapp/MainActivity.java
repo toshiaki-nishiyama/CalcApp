@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String str1 = mEditText1.getText().toString();
         String str2 = mEditText2.getText().toString();
 
-        int val1 = 0;
-        int val2 = 0;
+        float val1 = 0;
+        float val2 = 0;
 
         // エラーメッセージ用テキスト
         TextView textViewErr = (TextView) findViewById(R.id.textViewErr);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 第 1 引数チェック
         try
         {
-            val1 = Integer.parseInt(str1);
+            val1 = Float.parseFloat(str1);
         }
         catch (NumberFormatException e)
         {
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 第 2 引数チェック
         try
         {
-            val2 = Integer.parseInt(str2);
+            val2 = Float.parseFloat(str2);
         }
         catch (NumberFormatException e)
         {
