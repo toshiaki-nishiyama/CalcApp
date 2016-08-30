@@ -16,13 +16,13 @@ public class SecondActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        float value1 = 0;
-        float value2 = 0;
+        double value1 = 0;
+        double value2 = 0;
 
         // 第 1 引数受取
         try
         {
-            value1 = intent.getFloatExtra("VALUE1", 0);
+            value1 = intent.getDoubleExtra("VALUE1", 0);
         }
         catch (NumberFormatException e)
         {
@@ -33,7 +33,7 @@ public class SecondActivity extends AppCompatActivity {
         // 第 2 引数受取
         try
         {
-            value2 = intent.getFloatExtra("VALUE2", 0);
+            value2 = intent.getDoubleExtra("VALUE2", 0);
         }
         catch (NumberFormatException e)
         {
